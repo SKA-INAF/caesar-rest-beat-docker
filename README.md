@@ -1,2 +1,2 @@
 # caesar-rest-beat
-Dockerfile to build caesar rest celery beat service
+Dockerfile to build the caesar rest celery beat service Docker container
