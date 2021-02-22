@@ -12,7 +12,7 @@ ENV APP_NAME $APP_NAME_ARG
 ##     RUN
 ######################################
 # - Copy run script
-COPY run_celery.sh /opt/caesar-rest/bin/run_celery_beat.sh
+COPY run_celery_beat.sh /opt/caesar-rest/bin/run_celery_beat.sh
 RUN chmod +x /opt/caesar-rest/bin/run_celery_beat.sh
 
 # - Run 
