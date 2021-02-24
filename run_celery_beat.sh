@@ -40,7 +40,8 @@ done
 ###############################
 ##    RUN CELERY
 ###############################
-CMD="runuser -l $RUNUSER -g $RUNUSER -c'""/usr/local/bin/celery --broker=$BROKER_URL --result-backend=$RESULT_BACKEND_URL --app=$APP_NAME beat --loglevel=INFO""'"
+## NB: Passing --pidfile= empty because of https://stackoverflow.com/questions/53521959/dockercelery-error-pidfile-celerybeat-pid-already-exists
+CMD="runuser -l $RUNUSER -g $RUNUSER -c'""/usr/local/bin/celery --pidfile= --broker=$BROKER_URL --result-backend=$RESULT_BACKEND_URL --app=$APP_NAME beat --loglevel=INFO""'"
 
 echo "INFO: Running celery beat (cmd=$CMD) ..."
 
