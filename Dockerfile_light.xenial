@@ -1,4 +1,4 @@
-FROM sriggi/caesar-rest:light
+FROM sriggi/caesar-rest:latest
 
 MAINTAINER Simone Riggi "simone.riggi@gmail.com"
 
