@@ -1,0 +1,22 @@
+FROM sriggi/caesar-rest:devel
+
+MAINTAINER Simone Riggi "simone.riggi@gmail.com"
+
+######################################
+##   DEFINE CUSTOMIZABLE ARGS/ENVS
+######################################
+ARG APP_NAME_ARG="caesar_rest"
+ENV APP_NAME $APP_NAME_ARG
+
+######################################
+##     RUN
+######################################
+# - Copy run script
+COPY run_celery_beat.sh /opt/caesar-rest/bin/run_celery_beat.sh
+RUN chmod +x /opt/caesar-rest/bin/run_celery_beat.sh
+
+# - Run 
+CMD ["sh", "-c", "/opt/caesar-rest/bin/run_celery_beat.sh --runuser=$USER --broker=$BROKER_URL --result-backend=$RESULT_BACKEND_URL --app=$APP_NAME"]
+
+
+
